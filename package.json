@@ -1,0 +1,41 @@
+{
+  "name": "new-engine.web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.19",
+    "@fortawesome/free-solid-svg-icons": "^5.9.0",
+    "@fortawesome/vue-fontawesome": "^0.1.6",
+    "element-ui": "^2.11.1",
+    "exceljs": "^1.13.0",
+    "screenfull": "^4.2.1",
+    "vue": "^2.6.10",
+    "vue-class-component": "^6.0.0",
+    "vue-luxon": "^0.6.2",
+    "vue-property-decorator": "^7.3.0",
+    "vue-router": "^3.0.7",
+    "vuex": "^3.1.1",
+    "vuex-i18n": "^1.11.0"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@types/exceljs": "^0.5.3",
+    "@types/webpack": "^4.32.1",
+    "@vue/cli-plugin-typescript": "^3.0.3",
+    "@vue/cli-service": "^3.0.3",
+    "@vuex-orm/core": "^0.32.1",
+    "axios": "^0.18.1",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.0.1",
+    "typescript": "^3.5.3",
+    "vue-cli-plugin-axios-ts": "^1.0.2",
+    "vue-cli-plugin-fontawesome": "^0.1.0",
+    "vue-cli-plugin-i18n": "^0.5.1",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
