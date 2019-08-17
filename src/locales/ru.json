@@ -251,7 +251,8 @@
       },
       "descr" : {
         "placeholder" : "Заголовок", 
-        "prefix": "Заголовок"
+        "prefix": "Заголовок",
+        "error": "Укажите заголовок"
       },
       "content": {
         "topic": {

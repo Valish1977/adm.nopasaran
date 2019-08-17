@@ -44,7 +44,7 @@
                   <el-form-item
                     prop="type_id"
                     :rules="[
-                            { required: true, message: $t('Event.form.type_id.error'), trigger: 'change' }
+                            { required: true, message: getMessage('Event.form.type_id.error'), trigger: 'change' }
                           ]"
                   >
                     <el-tooltip
@@ -74,7 +74,7 @@
                   <el-form-item
                     prop="way_id"
                     :rules="[
-                            { required: true, message: $t('Event.form.way_id.error'), trigger: 'change'}
+                            { required: true, message: getMessage('Event.form.way_id.error'), trigger: 'change'}
                           ]"
                   >
                     <el-tooltip
@@ -112,7 +112,7 @@
                   <el-form-item
                     prop="edate"
                     :rules="[
-                        { required: true, message: $t('Event.form.edate.error'), trigger: 'input' }
+                        { required: true, message: getMessage('Event.form.edate.error'), trigger: 'input' }
                       ]"
                   >
                     <el-tooltip
@@ -167,7 +167,7 @@
                   <el-form-item
                     prop="geo_id"
                     :rules="[
-                            { required: true, message: $t('Event.form.geo_id.error'), trigger: 'change' }
+                            { required: true, message: getMessage('Event.form.geo_id.error'), trigger: 'change' }
                           ]"
                   >
                     <el-tooltip
@@ -206,8 +206,8 @@
                   <el-form-item
                     prop="adress"
                     :rules="[
-                            { required: true, message: $t('Event.form.adress.error'), trigger: 'blur' }, 
-                            { min: 1, max: 250, message: $t('Event.form.adress.error2'), trigger: ['blur', 'change'] }
+                            { required: true, message: getMessage('Event.form.adress.error'), trigger: 'blur' }, 
+                            { min: 1, max: 250, message: getMessage('Event.form.adress.error2'), trigger: ['blur', 'change'] }
                           ]"
                   >
                     <el-tooltip
@@ -238,8 +238,8 @@
                   <el-form-item
                     prop="topic"
                     :rules="[
-                            { required: true, message: $t('Event.form.topic.error'), trigger: 'blur' }, 
-                            { min: 1, max: 250, message: $t('Event.form.topic.error2'), trigger: ['blur', 'change'] }
+                            { required: true, message: getMessage('Event.form.topic.error'), trigger: 'blur' }, 
+                            { min: 1, max: 250, message: getMessage('Event.form.topic.error2'), trigger: ['blur', 'change'] }
                           ]"
                   >
                     <el-tooltip
@@ -270,7 +270,7 @@
                   <el-form-item
                     prop="descr"
                     :rules="[
-                            { required: true, message: $t('Event.form.descr.error'), trigger: 'blur' }, 
+                            { required: true, message: getMessage('Event.form.descr.error'), trigger: 'blur' }, 
                           ]"
                   >
                     <el-tooltip
@@ -551,6 +551,9 @@ export default class AddEvent extends Vue {
     this.close();
     this.selfLoading = true;
     this.dataLoaded = false;
+  }
+  private getMessage(str: string): string {
+    return this.$t(str) as string;
   }
   private nextStepper(): void {
     if (this.stepper++ > 3) {
