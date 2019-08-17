@@ -1,15 +1,13 @@
 
 
 <template>
-  <div>
     <el-dialog
+      fullscreen
       :visible="isVisible && type == 'add'"
-      width="1000px"
-      top="5vh"
       @close="closeForm()"
-      :close-on-click-modal="false"
     >
       <span slot="title" class="dialog-title">{{$t("Event.addEvent")}}</span>
+      <div class="components-container">
       <el-alert
         style="margin-bottom:15px"
         v-if="alertText != '' "
@@ -391,16 +389,14 @@
         </div>
           </el-col>
         </el-row>
-      
-      <span slot="footer" class="dialog-footer">
-        <el-row type="flex" class="row-bg" justify="space-between">
-          <el-col :span="12">
+        <el-row type="flex" class="row-bg" justify="space-between" style="margin-top:30px">
+          <el-col :span="5">
             <p class="el-form-item__label" style="margin:0; padding:0">
               <span style="color:red">*</span>
               <span>{{$t("Access.requiredField")}}</span>
             </p>
           </el-col>
-          <el-col :span="12">
+          <el-col :span="19" align="right">
             <el-button type="info" size="mini" plain @click.native="backStepper()" v-if="stepper != 0">{{$t("Event.back")}}</el-button>
             <el-button
               type="primary"
@@ -413,9 +409,8 @@
             <el-button type="info" size="mini" plain @click.native="nextStepper()" v-if="stepper != 3">{{$t("Event.next")}}</el-button>
           </el-col>
         </el-row>
-      </span>
+      </div>
     </el-dialog>
-  </div>
 </template>
 
 
