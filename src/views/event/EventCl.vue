@@ -88,8 +88,14 @@
               <strong v-if="scope.row.approved" style="color:#409EFF; font-size:20px">&#10003;</strong>
             </template>
           </el-table-column>
-          <el-table-column fixed="right" width="200">
+          <el-table-column fixed="right" width="220">
             <template slot-scope="scope">
+              <el-button
+                v-if="!scope.row.del"
+                type="text"
+                size="mini"
+                @click="copyForm({id: scope.row.id});"
+              >{{$t('Access.copy')}}</el-button>
               <el-button
                 v-if="!scope.row.del"
                 type="text"
@@ -168,6 +174,7 @@ import { activate } from "@/api/event";
     }),
     ...mapActions("eventForm", {
       loadEventForm: ACTIONS.LOAD,
+      copyForm: ACTIONS.COPY,
       update: ACTIONS.UPDATE
     }),
     ...mapActions("reference", {
@@ -334,7 +341,7 @@ export default class EventCl extends Vue {
     if (arr.length > 1) {
       date = arr[0] + "T" + arr[1] + ":00+00:00";
     }
-    return DateTime.fromISO(date).toLocaleString();
+    return DateTime.fromISO(date , { setZone: true }).toLocaleString(DateTime.DATETIME_SHORT);
   }
 }
 </script>

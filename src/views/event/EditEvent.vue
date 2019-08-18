@@ -568,6 +568,9 @@ export default class EditEvent extends Vue {
     }
   }
   private setDataForm(): void {
+    let date = DateTime.fromISO(this.myForm.edate , {setZone: true}) // обязательная процедура иначе отваливается датепикер
+    this.myForm.edate = ( date.toSQL() === null )? this.myForm.edate: date.toSQL(); // обязательная процедура иначе отваливается датепикер
+    this.modify({name:'edate', data: this.myForm.edate}) // обязательная процедура иначе отваливается датепикер
     this.delPhotoList = [];
     this.photoList = []; // затираем фотки
     this.countPhotos = 0;
@@ -631,7 +634,7 @@ export default class EditEvent extends Vue {
   private delMaterial(index): void {
     const materialList: any = [];
     for (const i in this.materialList) {
-      if (i !== index) {
+      if (i.toString() !== index.toString()) {
         materialList.push({
           author: this.materialList[i].author,
           link: this.materialList[i].link,
@@ -664,7 +667,7 @@ export default class EditEvent extends Vue {
     }
     const contentList: any = [];
     for (const i in this.contentList) {
-      if (i !== index) {
+      if (i.toString() !== index.toString()) {
         contentList.push({
           topic: this.contentList[i].topic,
           descr: this.contentList[i].descr,
@@ -676,7 +679,7 @@ export default class EditEvent extends Vue {
     }
     this.contentList = [];
     for (const i in contentList) {
-      if (this.contentList[i] !== undefined) {
+      if (this.contentList[i] === undefined) {
         this.contentList.push(Object.assign({}, contentList[i]));
       }
     }

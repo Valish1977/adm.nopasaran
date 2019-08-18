@@ -590,7 +590,7 @@ export default class AddEvent extends Vue {
   private delMaterial(index): void {
     const materialList: any = [];
     for (const i in this.materialList) {
-      if (i !== index) {
+      if (i.toString() !== index.toString()) {
         materialList.push({
           author: this.materialList[i].author,
           link: this.materialList[i].link,
@@ -626,7 +626,7 @@ export default class AddEvent extends Vue {
     }
     const contentList: any = [];
     for (const i in this.contentList) {
-      if (i !== index) {
+      if (i.toString() !== index.toString()) {
         contentList.push({
           topic: this.contentList[i].topic,
           descr: this.contentList[i].descr,

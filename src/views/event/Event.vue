@@ -352,7 +352,7 @@ export default class Event extends Vue {
     if (arr.length > 1) {
       date = arr[0] + "T" + arr[1] + ":00+00:00";
     }
-    return DateTime.fromISO(date).toLocaleString();
+    return DateTime.fromISO(date , { setZone: true }).toLocaleString(DateTime.DATETIME_SHORT);
   }
 }
 </script>
