@@ -27,7 +27,7 @@
     "@types/exceljs": "^0.5.3",
     "@types/webpack": "^4.32.1",
     "@vue/cli-plugin-typescript": "^3.0.3",
-    "@vue/cli-service": "^3.0.3",
+    "@vue/cli-service": "^5.0.8",
     "@vuex-orm/core": "^0.32.1",
     "axios": "^0.18.1",
     "node-sass": "^4.12.0",
